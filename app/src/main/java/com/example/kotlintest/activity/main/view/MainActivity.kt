@@ -11,9 +11,12 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.example.kotlintest.R
+import com.example.kotlintest.activity.main.event.UserEvent
 import com.example.kotlintest.activity.main.presenter.MainPresenter
 import com.example.kotlintest.adapter.UserAdapter
 import com.example.kotlintest.model.main.User
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 class MainActivity: MainActivityImpl, AppCompatActivity() {
 
@@ -26,11 +29,10 @@ class MainActivity: MainActivityImpl, AppCompatActivity() {
     var userAdapter: UserAdapter = UserAdapter()
     lateinit var layoutManager: LinearLayoutManager
 
-    val presenter: MainPresenter = MainPresenter(this)
+    private val presenter: MainPresenter = MainPresenter(this)
 
     @OnClick(R.id.btn_search)
     internal fun search(){
-        //Toast.makeText(this, "Hola mundo", Toast.LENGTH_SHORT).show()
         presenter.getUsers()
     }
 
@@ -58,7 +60,7 @@ class MainActivity: MainActivityImpl, AppCompatActivity() {
     override fun setDataToRecycler(user: List<User>?) {
         recyclerList.layoutManager = this.layoutManager
         recyclerList.setHasFixedSize(true)
-        userAdapter.UserAdapter(user)
+        userAdapter.userAdapter(user)
         recyclerList.adapter = userAdapter
     }
 

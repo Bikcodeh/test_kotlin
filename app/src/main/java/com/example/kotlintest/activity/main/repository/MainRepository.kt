@@ -14,7 +14,7 @@ class MainRepository(val presenter: MainPresenterImpl): MainRepositoryImpl {
     private val apiService: ApiService? = getApiService()
 
     init {
-        call = apiService!!.posts
+        call = apiService!!.users
     }
 
     override fun getUsersFromApi() {

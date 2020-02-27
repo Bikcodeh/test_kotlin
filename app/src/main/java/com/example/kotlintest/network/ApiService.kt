@@ -8,5 +8,5 @@ import retrofit2.http.GET
 interface ApiService {
 
     @get:GET("users")
-    val posts: Call<List<User>>
+    val users: Call<List<User>>
 }

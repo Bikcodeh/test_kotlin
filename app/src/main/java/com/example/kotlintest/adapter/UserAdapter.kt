@@ -1,5 +1,6 @@
 package com.example.kotlintest.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,13 +10,15 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.Unbinder
 import com.example.kotlintest.R
+import com.example.kotlintest.activity.detail.view.Detail
 import com.example.kotlintest.model.main.User
 
-class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewholder>() {
+class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewholder>(), View.OnClickListener {
 
-    lateinit var list: List<User>
+    private lateinit var list: List<User>
+    private val listener: View.OnClickListener? = null
 
-    fun UserAdapter(modelList: List<User>?){
+    fun userAdapter(modelList: List<User>?){
         if (modelList != null) {
            list = ArrayList(modelList)
         }
@@ -31,7 +34,15 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewholder>() {
     }
 
     override fun onBindViewHolder(holder: UserViewholder, position: Int) {
-        holder.nombre_usuario_txt.text = this.list[position].name
+        holder.nombreUsuarioTxt.text = this.list[position].name
+        holder.itemView.setOnClickListener{
+            val intent = Intent(it.context, Detail::class.java)
+            it.context.startActivity(intent)
+        }
+    }
+
+    override fun onClick(v: View?) {
+        listener?.onClick(v)
     }
 
     class UserViewholder(view: View): RecyclerView.ViewHolder(view){
@@ -39,6 +50,6 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewholder>() {
         var unbinder: Unbinder = ButterKnife.bind(this, view)
 
         @BindView(R.id.nombre_usuario_txt)
-        lateinit var nombre_usuario_txt: TextView
+        lateinit var nombreUsuarioTxt: TextView
     }
 }
