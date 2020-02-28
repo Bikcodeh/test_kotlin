@@ -40,6 +40,8 @@ class MainActivity: MainActivityImpl, AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initComponents()
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        title = resources.getString(R.string.title_main_activity)
 
     }
 

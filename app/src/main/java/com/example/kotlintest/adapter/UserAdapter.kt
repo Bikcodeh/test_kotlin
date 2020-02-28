@@ -34,7 +34,7 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewholder>(), View.OnCl
     }
 
     override fun onBindViewHolder(holder: UserViewholder, position: Int) {
-        holder.nombreUsuarioTxt.text = this.list[position].name
+        holder.nombreUsuarioTxt?.text = this.list[position].name
         holder.itemView.setOnClickListener{
             val intent = Intent(it.context, Detail::class.java)
             it.context.startActivity(intent)
@@ -47,9 +47,6 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewholder>(), View.OnCl
 
     class UserViewholder(view: View): RecyclerView.ViewHolder(view){
 
-        var unbinder: Unbinder = ButterKnife.bind(this, view)
-
-        @BindView(R.id.nombre_usuario_txt)
-        lateinit var nombreUsuarioTxt: TextView
+        var nombreUsuarioTxt: TextView = view.findViewById(R.id.nombre_usuario_txt)
     }
 }

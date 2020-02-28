@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">KotlinTest</string>
+    <string name="app_name">Users App</string>
+
+    <!-- Strings general -->
+    <string name="search">Buscar</string>
+    <!-- Strings general -->
+
+    <!-- Detail Activity-->
+    <string name="general_info">Datos generales</string>
+    <string name="address_info">Datos del domicilio</string>
+    <string name="company_info">Datos de empresa</string>
+    <!-- Detail Activity-->
+
+
+    <!-- Title's activities-->
+    <string name="title_main_activity">Usuarios</string>
+    <string name="title_detail_activity">Detalle del usuario</string>
+    <!-- Title's activities-->
+
+    <!-- Dummy text-->
+    <string name="dummy_name">Nombre: Benjamin Franklin</string>
+    <string name="dummy_email">Correo: benjamin_515@gmail.com</string>
+    <string name="dummy_nickname">Nickname: Benfra</string>
+    <string name="dummy_phone">Teléfono: 316346445</string>
+    <string name="dummy_website">Página web: www.mandraque.com</string>
+    <string name="dummy_street">Calle: Kulas Light</string>
+    <string name="dummy_suite">Habitación: Apt. 556</string>
+    <string name="dummy_city">Ciudad: Gwenborough</string>
+    <string name="dummy_zip">Código postal: 92998–3874</string>
+    <string name="dummy_company_name">Nombre: Romaguera-Crona</string>
+    <string name="dummy_catchphrase">Eslogan: Multi-layered client-server neural-net</string>
+    <string name="dummy_bs">BS: harness real-time e-markets</string>
+    <!-- Dummy text-->
+
 </resources>

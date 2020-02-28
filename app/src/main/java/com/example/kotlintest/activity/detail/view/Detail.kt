@@ -52,6 +52,11 @@ class Detail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
         ButterKnife.bind(this)
+
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        title = resources.getString(R.string.title_detail_activity)
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
     }
 
     override fun onStart() {
@@ -79,5 +84,10 @@ class Detail : AppCompatActivity() {
         txt_company.text = (String.format("Company: %s", userEvent.user.Company?.name))
         txt_catchPhrase.text = (String.format("CatchPhrase: %s", userEvent.user.Company?.catchPhrase))
         txt_bs.text = (String.format("BS: %s", userEvent.user.Company?.bs))
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
