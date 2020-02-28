@@ -55,8 +55,8 @@ class Detail : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
         title = resources.getString(R.string.title_detail_activity)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setDisplayShowHomeEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
     override fun onStart() {
